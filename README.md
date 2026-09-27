@@ -8,10 +8,7 @@
 </p>
 
 <p align="center">
-  <img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-3675a9?style=flat-square" />
-  <img alt="24-hour prediction horizon" src="https://img.shields.io/badge/Horizon-24h-147d72?style=flat-square" />
-  <img alt="Point-in-time framework" src="https://img.shields.io/badge/Framework-Point--in--time-183546?style=flat-square" />
-  <img alt="Selected public release" src="https://img.shields.io/badge/Release-Selected_components-64748b?style=flat-square" />
+  <img src="assets/badges.svg" width="620" alt="Python 3.10+ · 24h horizon · Point-in-time framework · Selected public release" />
 </p>
 
 <p align="center">
@@ -37,18 +34,7 @@ This project studies relative returns across contracts rather than the direction
 
 The public release provides a research narrative and reusable portfolio-accounting components. Research datasets, proprietary factor implementations and model pipelines remain private. [Release scope →](docs/PUBLIC_SCOPE.md)
 
-```mermaid
-flowchart LR
-    A[Hourly market observations] --> B[Daily cross-sectional features]
-    B --> C[Train-only signal selection]
-    C --> D[Single-factor and ML scores]
-    D --> E[Constrained long-short portfolio]
-    E --> F[Funding and cost accounting]
-    F --> G[Out-of-sample evaluation]
-    style A fill:#eaf4ff,stroke:#6797bd,color:#102235
-    style D fill:#e5f7f1,stroke:#52a38e,color:#102235
-    style G fill:#102235,stroke:#102235,color:#ffffff
-```
+![Research pipeline: observations, panel, signals, portfolio, accounting and evaluation](assets/workflow.svg)
 
 ## 01. Factor construction & economic logic
 
@@ -77,6 +63,16 @@ The research groups these observations into three themes:
 | Higher moments / jumps | Asymmetry, extremes and discontinuities | Are tail events rewarded or overvalued? |
 | Candlestick patterns | Intraday OHLC path | Does the path add information beyond the close? |
 | Intraday sessions | Activity across UTC time blocks | Do flows differ systematically within a 24/7 market? |
+
+### How the research develops each family
+
+**Order flow.** Start with aggressive participation, then examine its persistence across observations, changes between intraday sessions, and divergence from price behavior. A flow that continues without an equivalent price response motivates an accumulation or absorption hypothesis. Related signals are compared for redundancy before combination.
+
+**Funding and basis.** Treat them as positioning information as well as trading cash flows. Compare levels with recent changes and deviations from their own history; separate market-wide conditions from cross-sectional differences. Jointly elevated funding and basis motivate a crowding hypothesis, whose direction must be established in training.
+
+**Momentum and reversal.** Compare short-lived price pressure with sustained trends. Consider whether recent reversal dominates a longer trend and whether the broad market regime changes the signal's behavior. Risk-adjusted and market-residual versions help distinguish directional moves from common risk exposure.
+
+**Risk, liquidity and intraday paths.** Study activity through turnover, trade count and trade size; distinguish total volatility from market-residual risk; examine skewness, extreme hourly returns and jumps. OHLC paths and UTC-session activity provide additional descriptions of when and how the price move occurred. These are research directions; implementation formulas are not distributed.
 
 ### From correlated features to incremental signals
 
@@ -151,6 +147,45 @@ The presentation evaluates individual signals through a common long-short proces
 
 *Source: research presentation, single-factor section. Turnover is traded gross notional relative to portfolio equity. The source data and daily return series are retained privately.*
 
+#### Visual evidence: intraday skewness and short-horizon reversal
+
+![Intraday return skewness: long-short NAV, group comparison and performance summary](assets/figures/single-factor-skewness.jpg)
+
+*Intraday return skewness. The presentation graphic combines portfolio paths, group returns and a performance summary.*
+
+![Three-day reversal: long-short NAV, group comparison and performance summary](assets/figures/single-factor-reversal-3d.jpg)
+
+*Three-day reversal. A lower-turnover comparison to the intraday signal above.*
+
+<details>
+<summary><strong>Explore six additional single-factor charts</strong></summary>
+
+#### 24-hour reversal
+
+![24-hour reversal research chart](assets/figures/single-factor-reversal-24h.jpg)
+
+#### Mid-session return
+
+![Mid-session return research chart](assets/figures/single-factor-mid-session.jpg)
+
+#### Upper-shadow ratio
+
+![Upper-shadow ratio research chart](assets/figures/single-factor-upper-shadow.jpg)
+
+#### Taker-imbalance volatility
+
+![Taker-imbalance volatility research chart](assets/figures/single-factor-taker-volatility.jpg)
+
+#### Perpetual-spot basis
+
+![Perpetual-spot basis research chart](assets/figures/single-factor-basis.jpg)
+
+#### Amihud price impact
+
+![Amihud price impact research chart](assets/figures/single-factor-amihud.jpg)
+
+</details>
+
 The research compares ranking quality, portfolio risk and trading intensity together. A high-turnover signal needs a stronger edge to survive costs; a promising economic hypothesis does not necessarily produce a strong portfolio result.
 
 ## 03. Machine learning portfolios
@@ -166,6 +201,10 @@ The modeling layer combines a cross-sectional factor panel into one score per co
 | **LightGBM / GBM** | Nonlinear tree ensemble | Interactions and conditional relationships | Greater complexity and overfitting risk |
 
 ### Composite comparison
+
+![Out-of-sample research comparison: IC, Lasso, GBM and reference portfolios](assets/figures/ml-composite-comparison.jpg)
+
+*Common evaluation window, with the equal-weighted benchmark shown alongside the research portfolios.*
 
 | Presentation model | CAGR | Sharpe |
 | :--- | ---: | ---: |
@@ -193,6 +232,10 @@ flowchart LR
 ```
 
 The presentation's selected symbolic candidate reports **40.4% CAGR and 2.59 Sharpe**. The expression, search implementation and selected research artifacts are retained privately. The public framework can evaluate externally supplied scores from any of these methods.
+
+![Selected symbolic candidate compared with machine learning and reference portfolios](assets/figures/symbolic-portfolio-comparison.jpg)
+
+*The presentation labels the selected symbolic candidate “fac1.” Its formula is excluded from the public release.*
 
 ## Quick start
 
@@ -236,7 +279,7 @@ src/crypto_cs/       Time alignment, funding and portfolio accounting
 examples/           Generated demonstration; no research dataset
 tests/              Accounting and timing regression tests
 docs/               Framework, input contract and public release scope
-assets/             Original presentation artwork for this README
+assets/             README artwork and selected presentation graphics
 ```
 
 | Read next | Purpose |
