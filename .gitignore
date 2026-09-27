@@ -24,4 +24,4 @@ tmp/
 *.png
 *.jpg
 *.jpeg
-
+!assets/figures/*.jpg

@@ -52,4 +52,3 @@ The package accepts scores produced elsewhere. It does not implement the researc
 The engine returns a daily PnL table and a position ledger. `performance_stats` reports CAGR, annualized volatility, zero-risk-free-rate Sharpe, maximum drawdown, final NAV and average turnover, using 365 daily observations per year.
 
 This is a daily linear-notional accounting model. It does not simulate exchange orders, partial fills, intraday margin, liquidation or ADL. The bankruptcy guard stops a daily portfolio loss of 100% or more; it is not an intraday margin model. Point-in-time data quality remains the caller's responsibility.
-

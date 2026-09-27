@@ -11,4 +11,3 @@ __all__ = [
     "aggregate_daily_features", "aggregate_funding_events_for_windows",
     "attach_hourly_execution_labels",
 ]
-

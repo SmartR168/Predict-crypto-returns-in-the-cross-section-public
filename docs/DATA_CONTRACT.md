@@ -33,4 +33,3 @@ One event per contract and settlement timestamp. Coverage uses `symbol`, `covera
 ## Point-in-time metadata
 
 Provide historical trading status, listing and delisting announcements, liquidity observations and required trading constraints through your own adapter. The public package contains no database connection, API key, historical market dataset or exchange metadata archive.
-
