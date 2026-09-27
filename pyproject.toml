@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crypto-cross-section-framework"
+version = "0.1.0"
+description = "Point-in-time cross-sectional backtesting for crypto perpetuals"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26", "pandas>=2.1"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

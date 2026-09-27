@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-labelledby="title desc">
+<title id="title">Predict crypto returns in the cross-section</title><desc id="desc">Cross-sectional alpha research, perpetual futures, point-in-time backtesting and machine learning.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#08111e"/><stop offset="1" stop-color="#122b40"/></linearGradient><linearGradient id="accent"><stop stop-color="#6be6cc"/><stop offset="1" stop-color="#67adff"/></linearGradient><pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M44 0H0V44" fill="none" stroke="#29455a" stroke-width=".6"/></pattern></defs>
+<rect width="1280" height="420" rx="22" fill="url(#bg)"/><rect x="820" y="0" width="460" height="420" fill="url(#grid)" opacity=".5"/>
+<g font-family="Segoe UI,Arial,sans-serif"><text x="64" y="68" fill="#77dec9" font-size="14" letter-spacing="3">RONG JIA / QUANTITATIVE RESEARCH</text>
+<text x="64" y="139" fill="#f5f8fc" font-size="48" font-weight="700">Predict crypto returns</text><text x="64" y="199" fill="#f5f8fc" font-size="48" font-weight="700">in the cross-section.</text>
+<text x="64" y="251" fill="#b3c5d5" font-size="21">From market microstructure to portfolio intelligence.</text>
+<rect x="64" y="292" width="258" height="36" rx="18" fill="#183546"/><text x="84" y="316" fill="#7fe6d2" font-size="14">BINANCE USDT PERPETUALS</text>
+<text x="64" y="377" fill="#b3c5d5" font-size="15">FACTOR RESEARCH</text><text x="262" y="377" fill="#b3c5d5" font-size="15">POINT-IN-TIME BACKTEST</text><text x="539" y="377" fill="#b3c5d5" font-size="15">MACHINE LEARNING</text></g>
+<g transform="translate(877 82)"><rect width="322" height="246" rx="16" fill="#102235" stroke="#375266"/>
+<g font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#91a9bb"><text x="24" y="33">RESEARCH ARCHITECTURE</text><text x="24" y="220">OBSERVE</text><text x="133" y="220">RANK</text><text x="226" y="220">ALLOCATE</text></g>
+<path d="M38 145L90 82L147 123L210 61L274 99" fill="none" stroke="url(#accent)" stroke-width="3"/>
+<g fill="#77e1ce" stroke="#102235" stroke-width="4"><circle cx="38" cy="145" r="8"/><circle cx="90" cy="82" r="8"/><circle cx="147" cy="123" r="8"/><circle cx="210" cy="61" r="8"/><circle cx="274" cy="99" r="8"/></g>
+<path d="M32 181H287" stroke="#375266"/><g fill="#67adff"><rect x="50" y="160" width="12" height="21" rx="2"/><rect x="77" y="150" width="12" height="31" rx="2"/><rect x="104" y="137" width="12" height="44" rx="2"/><rect x="131" y="124" width="12" height="57" rx="2"/></g><g fill="#77e1ce"><rect x="174" y="160" width="12" height="21" rx="2"/><rect x="201" y="151" width="12" height="30" rx="2"/><rect x="228" y="142" width="12" height="39" rx="2"/><rect x="255" y="133" width="12" height="48" rx="2"/></g></g>
+</svg>
